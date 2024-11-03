@@ -1,27 +1,35 @@
+import { useState } from "react";
 import HouseRow from "./houseRow";
 
-const houses = [
+const housesArray = [
   {
     id: 1,
     address: "123 Main Street, Springfield",
     country: "USA",
-    price: "$350,000",
+    price: 350000,
   },
   {
     id: 2,
     address: "456 Elm Street, London",
     country: "UK",
-    price: "£450,000",
-  },
-  {
-    id: 3,
-    address: "789 Maple Avenue, Toronto",
-    country: "Canada",
-    price: "CAD 600,000",
+    price: 450000,
   },
 ];
 
 const HouseList = () => {
+  const [houses, setHouses] = useState(housesArray);
+
+  const addHouse = () => {
+    setHouses([
+      ...houses,
+      {
+        id: 3,
+        address: "789 Maple Avenue, Toronto",
+        country: "Canada",
+        price: 600000,
+      },
+    ]);
+  };
   return (
     <>
       <div className="row mb-2">
@@ -43,6 +51,9 @@ const HouseList = () => {
           ))}
         </tbody>
       </table>
+      <button className="btn btn-primary" onClick={addHouse}>
+        Add
+      </button>
     </>
   );
 };
