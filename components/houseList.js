@@ -1,23 +1,8 @@
-import { useState } from "react";
+import useHouses from "../hooks/useHouses";
 import HouseRow from "./houseRow";
 
-const housesArray = [
-  {
-    id: 1,
-    address: "123 Main Street, Springfield",
-    country: "USA",
-    price: 350000,
-  },
-  {
-    id: 2,
-    address: "456 Elm Street, London",
-    country: "UK",
-    price: 450000,
-  },
-];
-
-const HouseList = () => {
-  const [houses, setHouses] = useState(housesArray);
+const HouseList = ({ selectHouse }) => {
+  const { houses, setHouses } = useHouses();
 
   const addHouse = () => {
     setHouses([
@@ -47,7 +32,7 @@ const HouseList = () => {
         </thead>
         <tbody>
           {houses.map((h) => (
-            <HouseRow key={h.id} house={h} />
+            <HouseRow key={h.id} house={h} selectHouse={selectHouse} />
           ))}
         </tbody>
       </table>
