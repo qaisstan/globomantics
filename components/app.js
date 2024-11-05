@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <Banner headerText="Providing house all over the world" />;
-      <HouseList></HouseList>
+      <HouseList />
     </>
   );
 };

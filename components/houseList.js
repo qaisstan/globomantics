@@ -34,7 +34,7 @@ const HouseList = () => {
     <>
       <div className="row mb-2">
         <h5 className="themeFontColor text-center">
-          Hopuses curremtly on the market
+          Hopuses currently on the market
         </h5>
       </div>
       <table>

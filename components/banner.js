@@ -5,6 +5,7 @@ const subtitleStyles = {
   fontSize: "x-large",
   color: "coral",
 };
+
 const Banner = ({ headerText }) => {
   return (
     <header className="row mb-4">
